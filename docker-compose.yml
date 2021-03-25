@@ -19,6 +19,8 @@ services:
             dockerfile: php-fpm.docker
         volumes:
             - ./app:/app
+        depends_on:
+            - mysql
 
     php-cli:
         build:
@@ -26,3 +28,27 @@ services:
             dockerfile: php-cli.docker
         volumes:
             - ./app:/app
+        depends_on:
+            - mysql
+
+    mysql:
+        image: mariadb:10.4
+        ports:
+            - 3366:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: symfony
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+        volumes:
+            - ./databases/mariadb:/var/lib/mysql
+              
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+            - 8080:80
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: user
+            PMA_PASSWORD: password
+
