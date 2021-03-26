@@ -17,3 +17,9 @@ make up
 ```bash
 make down
 ```
+
+Если возникли ошибки с доступом к логам и кешу:
+
+```bash
+sudo chmod -R 777 var/cache var/logs var/sessions
+```
