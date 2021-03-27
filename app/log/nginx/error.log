@@ -1,2 +1,0 @@
-2021/03/26 15:04:16 [error] 34#34: *1 rewrite or internal redirection cycle while redirect to named location "@rewriteapp", client: 172.29.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8000"
-2021/03/26 15:04:17 [error] 34#34: *2 rewrite or internal redirection cycle while redirect to named location "@rewriteapp", client: 172.29.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8000"
