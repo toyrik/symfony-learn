@@ -17,3 +17,9 @@ make up
 ```bash
 make down
 ```
+
+Для выполнения команд в контейнере
+
+```bash
+docker-compose run --rm php-cli <команда>
+```
